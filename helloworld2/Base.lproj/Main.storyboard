@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,69 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0N-g9-yCj">
+                                <rect key="frame" x="129" y="205" width="62" height="30"/>
+                                <state key="normal" title="Say hello"/>
+                                <connections>
+                                    <action selector="actionBouton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8t-ZB-V8U"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0O-q7-kVu">
+                                <rect key="frame" x="140.5" y="116" width="39" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="e0O-q7-kVu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="96" id="4yU-Ub-yb3"/>
+                            <constraint firstItem="e0O-q7-kVu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G7H-eV-XK3"/>
+                            <constraint firstItem="N0N-g9-yCj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KCu-vF-CO0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N0N-g9-yCj" secondAttribute="trailing" constant="106" id="Liq-Ou-MBv"/>
+                            <constraint firstItem="N0N-g9-yCj" firstAttribute="top" secondItem="e0O-q7-kVu" secondAttribute="bottom" constant="69" id="SgG-lw-LOM"/>
+                            <constraint firstItem="e0O-q7-kVu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="eWi-f6-03B"/>
+                            <constraint firstItem="e0O-q7-kVu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="fhB-a0-kJK"/>
+                            <constraint firstItem="e0O-q7-kVu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fuJ-TR-gH0"/>
+                            <constraint firstItem="N0N-g9-yCj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vrK-4Z-6Ww"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Liq-Ou-MBv"/>
+                                <exclude reference="eWi-f6-03B"/>
+                                <exclude reference="fhB-a0-kJK"/>
+                                <exclude reference="fuJ-TR-gH0"/>
+                                <exclude reference="vrK-4Z-6Ww"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Liq-Ou-MBv"/>
+                                <exclude reference="4yU-Ub-yb3"/>
+                                <exclude reference="G7H-eV-XK3"/>
+                                <include reference="eWi-f6-03B"/>
+                                <include reference="fhB-a0-kJK"/>
+                                <include reference="fuJ-TR-gH0"/>
+                                <exclude reference="KCu-vF-CO0"/>
+                                <exclude reference="SgG-lw-LOM"/>
+                                <include reference="vrK-4Z-6Ww"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="e0O-q7-kVu" id="aYS-e4-vFa"/>
+                        <outlet property="labelButon" destination="N0N-g9-yCj" id="1LE-0a-a7S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="120.28985507246378" y="30.978260869565219"/>
         </scene>
     </scenes>
 </document>

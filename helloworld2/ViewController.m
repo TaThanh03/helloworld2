@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 
@@ -26,4 +27,19 @@
 }
 
 
+- (IBAction)actionBouton:(id)sender {
+    NSLog(@"Bouton press");
+    
+    NSString * text = _label.text;
+    if ([text isEqualToString:@"Hello"]){
+        [_label setText:@"Bye"];
+        [sender setTitle:@"Say hello" forState:UIControlStateNormal];
+    }
+    else {
+        [_label setText:@"Hello"];
+        [sender setTitle:@"Say bye" forState:UIControlStateNormal];
+    }
+    
+    
+}
 @end
